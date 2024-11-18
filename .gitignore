@@ -87,3 +87,5 @@ modules/
 !src/CScript.Deps.o
 !src/resdata/*
 !tools/*
+src/CScript.Deps/Win64x/
+examples/testbed/Win64/
