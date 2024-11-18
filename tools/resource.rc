@@ -1,0 +1,34 @@
+// resource.rc
+#include "windres.h"
+
+// Define an icon resource
+1 ICON        "resource.ico"
+1 RT_MANIFEST "resource.manifest"
+
+// Define a version resource
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x4L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            VALUE "CompanyName", "Your Company"
+            VALUE "FileDescription", "Sample Application"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "SampleApp"
+            VALUE "ProductName", "Sample Application"
+            VALUE "ProductVersion", "1.0.0.0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x409, 1252
+    }
+}

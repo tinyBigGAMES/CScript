@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{47EC7B2C-B829-43D4-ACAF-25517BC80D9C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CScript.Deps\CScript.Deps.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\testbed\Testbed.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\csc\csc.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CScript_Deps">
+        <MSBuild Projects="CScript.Deps\CScript.Deps.cbproj"/>
+    </Target>
+    <Target Name="CScript_Deps:Clean">
+        <MSBuild Projects="CScript.Deps\CScript.Deps.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CScript_Deps:Make">
+        <MSBuild Projects="CScript.Deps\CScript.Deps.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Testbed">
+        <MSBuild Projects="..\examples\testbed\Testbed.dproj"/>
+    </Target>
+    <Target Name="Testbed:Clean">
+        <MSBuild Projects="..\examples\testbed\Testbed.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Testbed:Make">
+        <MSBuild Projects="..\examples\testbed\Testbed.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="csc">
+        <MSBuild Projects="..\examples\csc\csc.dproj"/>
+    </Target>
+    <Target Name="csc:Clean">
+        <MSBuild Projects="..\examples\csc\csc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="csc:Make">
+        <MSBuild Projects="..\examples\csc\csc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CScript_Deps;Testbed;csc"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CScript_Deps:Clean;Testbed:Clean;csc:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CScript_Deps:Make;Testbed:Make;csc:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

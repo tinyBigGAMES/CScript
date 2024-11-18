@@ -79,3 +79,11 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+#
+*.dsv
+!bin/raylib.dll
+!bin/res/lib/libtest01.a
+!src/CScript.Deps.o
+!src/resdata/*
+!tools/*
