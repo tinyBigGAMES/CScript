@@ -100,6 +100,11 @@ begin
 end;
 ```
 
+### Prerequisites
+- **Delphi 12 CE or higher** 🖥️
+- **Windows 10 or higher** 🪟
+- **Tested on Windows 11 64-bit (23H2), Delphi 12.2** ✅
+
 ### 🛠️ Installation
 
 To integrate **🅲🆂cript** into your Delphi project:
